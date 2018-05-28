@@ -1,5 +1,18 @@
 * A simple [[https://nethackwiki.com/wiki/Dgamelaunch][dgamelaunch]] client
 
+  This is a very simple utility to do away with messing with your ssh
+  config & the shell's =DGLAUTH= environment variable. Instead you
+  simply declare your accounts in =$HOME/.config/ssh-hack.rktd= invoke
+  as =ssh-hack <alias>=, where =<alias>= is either a hostname or an
+  alias specified in the configuration file. You can get a list of
+  accounts configured with =ssh-hack -l=.
+
+** Install
+
+  [[https://pkgd.racket-lang.org/pkgn/package/ssh-hack][Package on pkgs.racket-lang.org]]
+
+  Only Unix-likes are supported at the moment.
+
   Install via =raco pkg install ssh-hack= and ensure your user's
   Racket =bin/= directory is in your path.
 
@@ -24,3 +37,12 @@
      "your-other-DLG-auth-username"
      "your-other-DLG-auth-password"})
 #+END_SRC
+
+** Some ideas for improvement
+
+   - Add a layer to automate tedious tasks - such as Elbereth spam, or
+     testing if a BoH is cursed.
+   - Support Windows.
+   - Add documentation to the help message.
+   - Add documentation to =docs.racket-lang.org=.
+   - Support telnet for Dgamelaunch services that don't support ssh.
