@@ -19,13 +19,13 @@ structure:
 (#s{service
     #s{ssh-server "nethack" "alt.org" 22}
     ("nao" "alt")
-    "your-DLG-auth-username"
-    "your-DLG-auth-password"}
+    "your-DGL-auth-username"
+    "your-DGL-auth-password"}
  #s{service
    #s{ssh-server "ssh-username" "ssh-host" 22}
-   ("aliases" "to" "use" "here")
-   "your-other-DLG-auth-username"
-   "your-other-DLG-auth-passwrd"})
+   ("aliases" "to" "use" "here") ; or #f to only match by ssh-host
+   "your-other-DGL-auth-username"
+   "your-other-DGL-auth-password"})
 |#
 
 (provide (all-defined-out))
