@@ -1,0 +1,26 @@
+* A simple [[https://nethackwiki.com/wiki/Dgamelaunch][dgamelaunch]] client
+
+  Install via =raco pkg install ssh-hack= and ensure your user's
+  Racket =bin/= directory is in your path.
+
+** =ssh-hack.rktd= format
+
+   This contains a list of dgamelaunch connection configurations.
+
+*** Example
+
+    Note: the list isn't quoted because it is parsed using =(read)=
+    which quotes it for you.
+
+#+BEGIN_SRC racket
+  (#s{service
+      #s{ssh-server "nethack" "alt.org" 22}
+      ("nao" "alt")
+      "your-DLG-auth-username"
+      "your-DLG-auth-password"}
+   #s{service
+     #s{ssh-server "ssh-username" "ssh-host" 22}
+     ("aliases" "to" "use" "here") ; or #f to only match by ssh-host
+     "your-other-DLG-auth-username"
+     "your-other-DLG-auth-password"})
+#+END_SRC
