@@ -25,6 +25,8 @@
     Note: the list isn't quoted because it is parsed using =(read)=
     which quotes it for you.
 
+    See [[file:example-ssh-hack.rktd][example-ssh-hack.rktd]]
+
 #+BEGIN_SRC racket
   (#s{service
       #s{ssh-server "nethack" "alt.org" 22}
