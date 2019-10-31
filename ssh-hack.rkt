@@ -4,7 +4,8 @@
 (require racket/cmdline
          racket/list
          racket/match
-         racket/string)
+         racket/string
+         ansi)
 
 #|
 TODO: Put the following commented text into the command-line help.
@@ -68,6 +69,12 @@ structure:
     (unless ssh-path
       (error 'ssh "Cannot locate path of ssh executable"))
     (putenv "DGLAUTH" (string-append user ":" password))
+
+    (match (system-type 'os)
+      [(or 'macosx 'unix)
+       (display (xterm-set-window-title (format "ssh-hack :: ~a" (service->string the-service))))
+       (flush-output (current-output-port))]
+      [_ (void)])
 
     (define-values (ssh-subprocess stdout stdin stderr)
       (subprocess (current-output-port)
