@@ -99,6 +99,19 @@ structure:
       (exit 0)]
      [("-c" "--config") alternate-config-path "Specify alternate config path"
       (config-path (string->path alternate-config-path))]
+     [("-d" "--dimensions") "Print out the dimensions of the terminal."
+      (unless (member (system-type 'os) '(macosx unix))
+        (raise-user-error "-d flag not supported on non-unix"))
+      (tty-raw!)
+      (display (dec-soft-terminal-reset))
+      (display (device-request-screen-size))
+      (flush-output (current-output-port))
+      (define report (lex-lcd-input (current-input-port)))
+      (tty-restore!)
+      (match report
+        [(struct* screen-size-report ([columns cols] [rows lines]))
+         (printf "~ax~a\n" cols lines)])
+      (exit 0)]
      #:args (alias)
      alias))
   (define matches
