@@ -1,3 +1,5 @@
+[[https://unmaintained.tech/][https://unmaintained.tech/badge.svg]]
+
 * A simple [[https://nethackwiki.com/wiki/Dgamelaunch][dgamelaunch]] client
 
   This is a very simple utility to do away with messing with your ssh
