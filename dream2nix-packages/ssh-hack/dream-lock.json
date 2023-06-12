@@ -1,0 +1,38 @@
+{
+  "_generic": {
+    "defaultPackage": "ssh-hack",
+    "invalidationHash": "caa46ad696089fc793cb533d69b087c418a463b73d6b471a5bccdfd2e5a65d57",
+    "location": "",
+    "packages": {
+      "ssh-hack": "0.0.0"
+    },
+    "sourcesAggregatedHash": null,
+    "subsystem": "racket"
+  },
+  "_subsystem": {},
+  "dependencies": {
+    "ansi": {
+      "0.0.0": []
+    },
+    "ssh-hack": {
+      "0.0.0": [
+        [ "ansi", "0.0.0" ]
+      ]
+    }
+  },
+  "sources": {
+    "ansi": {
+      "0.0.0": {
+        "rev": "c14081de59bc7273f1f9088a51d6d9c202b2b9d0",
+        "type": "git",
+        "url": "https://github.com/tonyg/racket-ansi"
+      }
+    },
+    "ssh-hack": {
+      "0.0.0": {
+        "path": "/nix/store/c8ynn7xll6yl1r6aj4b4a902xq4nfw5a-kzyza5l50285058c83337yh2vjnqnn1d-source",
+        "type": "path"
+      }
+    }
+  }
+}
