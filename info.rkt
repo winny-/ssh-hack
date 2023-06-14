@@ -4,4 +4,6 @@
 (define deps '("base"
                "ansi"))
 (define racket-launcher-names '("ssh-hack"))
-(define racket-launcher-libraries '("ssh-hack.rkt"))
+
+;; It seems dream2nix isn't detecting the launcher so it can't find the load path.  FIXME.
+(define racket-launcher-libraries '("main.rkt"))

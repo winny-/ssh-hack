@@ -1,4 +1,3 @@
-#!/usr/bin/env racket
 #lang racket/base
 
 (require racket/cmdline
@@ -88,7 +87,9 @@ structure:
     (subprocess-wait ssh-subprocess)
     (subprocess-status ssh-subprocess)))
 
-(module+ main
+
+
+(define (main)
   (define alias
     (command-line
      #:program "ssh-hack"
@@ -130,3 +131,6 @@ structure:
          (displayln (format "  ~a" (service->string s))))
        (exit 1))]
     [(list a) (exit (ssh a))]))
+
+(module+ main
+  (main))
